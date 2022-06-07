@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith({BaseIntegrationTestServer.class})
 public class BooksResourceIntegrationIntegrationTest {
 
-    private static final String API_BASE_URL = "http://localhost:8081/";
+    private static final String API_BASE_URL = "http://localhost:8081/api/";
     private static final ObjectMapper mapper = new ObjectMapper();
 
     @Test

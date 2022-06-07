@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 public class RootResource {
-    public static final String BASE_URL = "/";
+    public static final String BASE_URL = "/api/";
 
     public static final String CONTENT_TYPE_JSON = "application/json";
     public static final String CONTENT_TYPE_JPEG = "image/jpeg";

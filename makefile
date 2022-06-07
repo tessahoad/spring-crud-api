@@ -35,13 +35,13 @@ clean: ## Remove all artefacts
 
 .PHONY: create-book
 create-book: ## Call the API and create a task with a random ID
-	@curl -s -X POST 'http://localhost:8080/books' \
+	@curl -s -X POST 'http://localhost:8080/api/books' \
 		--header 'Content-Type: application/json' \
 		-d '{ "title": "book-1", "publishYear": 2000 }' \
 		| jq -r '.'
 
 list-books: ## Call the API and list all the current tasks
-	@curl -s -X GET 'http://localhost:8080/books' \
+	@curl -s -X GET 'http://localhost:8080/api/books' \
 		--header 'Content-Type: application/json' \
 		| jq -r '.'
 
