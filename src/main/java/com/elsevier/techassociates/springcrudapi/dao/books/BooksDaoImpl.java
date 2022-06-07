@@ -28,8 +28,10 @@ public class BooksDaoImpl implements BooksDao {
     private static final String SQL_INSERT_BOOK = "INSERT INTO books (book_id, book_title, book_publish_year)" +
             " VALUES (:" + PARAM_BOOK_ID + ", :" + PARAM_BOOK_TITLE + ", :" + PARAM_BOOK_PUBLISH_YEAR + ")";
 
+    private final NamedParameterJdbcTemplate jdbcTemplate;
+
     @Inject
-    private NamedParameterJdbcTemplate jdbcTemplate;
+    public BooksDaoImpl(NamedParameterJdbcTemplate jdbcTemplate) { this.jdbcTemplate = jdbcTemplate; }
 
     @Override
     public List<Book> list() {

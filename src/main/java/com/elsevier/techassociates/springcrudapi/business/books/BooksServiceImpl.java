@@ -11,8 +11,10 @@ import java.util.List;
 @Service
 public class BooksServiceImpl implements BooksService {
 
+    private final BooksDao booksDao;
+
     @Inject
-    private BooksDao booksDao;
+    public BooksServiceImpl(BooksDao booksDao) { this.booksDao = booksDao; }
 
     @Override
     public List<Book> list() {

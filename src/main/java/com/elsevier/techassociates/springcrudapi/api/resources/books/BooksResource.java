@@ -22,8 +22,10 @@ public class BooksResource {
     public static final String BOOKS_PATH = BASE_URL + "books";
     public static final String BOOK_PATH = BOOKS_PATH + "/{" + PATH_PARAM_BOOK_ID + "}";
 
+    private final BooksService booksService;
+
     @Inject
-    private BooksService booksService;
+    public BooksResource(BooksService booksService) { this.booksService = booksService; }
 
     @GetMapping(value = BOOKS_PATH, produces = CONTENT_TYPE_JSON)
     public ResponseEntity<List<Book>> list() {
