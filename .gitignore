@@ -13,3 +13,4 @@ buildNumber.properties
 gradlew
 gradlew.bat
 .gradle
+gradle

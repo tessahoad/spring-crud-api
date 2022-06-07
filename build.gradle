@@ -1,15 +1,15 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-sourceCompatibility = 1.11
-targetCompatibility = 1.11
+sourceCompatibility = 11
+targetCompatibility = 11
 
 repositories {
     mavenCentral()
 }
 
 ext {
-    javaMainClass = "com.elsevier.techassociates.Application"
+    javaMainClass = "com.elsevier.techassociates.springcrudapi.Application"
 }
 
 application {
