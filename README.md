@@ -30,6 +30,25 @@ OR
 
 2. Hit play button in intellij
 
+### Interacting with the API
+
+#### Using the makefile
+
+From the project root, run:
+
+```shell
+  make
+```
+to list some convenient commands to allow you to interact with the api.
+
+#### Call API using your favourite client
+
+However you usually call an API, you can do that here, e.g. curl:
+
+```shell
+  curl -s -X GET 'http://localhost:8080/api/books' --header 'Content-Type: application/json'
+```
+
 When you are done, stop the database from running:
 ```shell
   cd docker
