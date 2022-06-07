@@ -10,3 +10,6 @@ buildNumber.properties
 /docker/postgres-data
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+gradlew
+gradlew.bat
+.gradle

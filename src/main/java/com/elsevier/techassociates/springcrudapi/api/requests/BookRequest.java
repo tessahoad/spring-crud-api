@@ -4,6 +4,8 @@ public class BookRequest {
     private String title;
     private Integer publishYear;
 
+    public BookRequest() {}
+
     public BookRequest(String title, Integer publishYear) {
         this.title = title;
         this.publishYear = publishYear;

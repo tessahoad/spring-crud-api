@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Service
-public class PostgresBooksDao implements BooksDao {
+public class BooksDaoImpl implements BooksDao {
 
     private static final String PARAM_BOOK_ID = "bookId";
     private static final String PARAM_BOOK_TITLE = "bookTitle";
