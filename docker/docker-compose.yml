@@ -1,0 +1,13 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.5.7
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: spring_crud_api_user
+      POSTGRES_PASSWORD: spring_crud_api_user_password
+      POSTGRES_DB: spring_crud_api_database
+    volumes:
+      # copy the sql script to create tables
+      - ./sql/V1__init.sql:/docker-entrypoint-initdb.d/create_tables.sql
