@@ -20,8 +20,30 @@ public class BooksResourceIntegrationIntegrationTest {
     private static final String API_BASE_URL = "http://localhost:8081/api/";
     private static final ObjectMapper mapper = new ObjectMapper();
 
+
     @Test
-    public void shouldReturn200WhenGettingExistingCat() throws Exception {
+    public void shouldReturn400WhenPublishYearInBadFormatWhenCreatingABook() {
+        // Given
+        String createPath = "books";
+
+        String body = "{\"title\": \"good-title\", \"publishYear\": \"badPublishYear\" }";
+
+        // When
+        final Response response = RestAssured
+                .given()
+                .body(body)
+                .contentType(ContentType.JSON)
+                .post(API_BASE_URL + createPath)
+                .then()
+                .extract()
+                .response();
+
+        // Then
+        assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCode());
+    }
+
+    @Test
+    public void shouldReturn200WhenGettingExistingBook() throws Exception {
         // Given
         Book expectedBook = createBook();
         String readPath = "books/" + expectedBook.getId();
@@ -44,7 +66,7 @@ public class BooksResourceIntegrationIntegrationTest {
     }
 
     @Test
-    public void shouldReturn404WhenGettingNonExistentCat() {
+    public void shouldReturn404WhenGettingNonExistentBook() {
         // Given
         String readPath = "books/" + randomUUID();
 
@@ -61,7 +83,7 @@ public class BooksResourceIntegrationIntegrationTest {
     }
 
     @Test
-    public void shouldReturn201WhenCreatingACat() throws Exception {
+    public void shouldReturn201WhenCreatingABook() throws Exception {
         // Given
         String createPath = "books";
 
@@ -80,7 +102,7 @@ public class BooksResourceIntegrationIntegrationTest {
     }
 
     @Test
-    public void shouldReturn204WhenDeletingAnyCat() {
+    public void shouldReturn204WhenDeletingAnyBook() {
         // Given
         String deletePath = "books/" + randomUUID();
 
