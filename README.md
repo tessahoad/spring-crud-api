@@ -30,6 +30,13 @@ OR
 
 2. Hit play button in intellij
 
+When you are done, stop the database container from running:
+
+```shell
+  cd docker
+  docker-compose down
+```
+
 ### Interacting with the API
 
 #### Using the makefile
@@ -47,12 +54,6 @@ However you usually call an API, you can do that here, e.g. curl:
 
 ```shell
   curl -s -X GET 'http://localhost:8080/api/books' --header 'Content-Type: application/json'
-```
-
-When you are done, stop the database from running:
-```shell
-  cd docker
-  docker-compose down
 ```
 
 ## Integration Tests
